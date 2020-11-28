@@ -18,7 +18,7 @@ public class GameOver extends State {
 
 	@Override
 	public void init() {
-		this.initializeAssets("textures/background/background-gameover.png", "music/gameover-theme.wav", FONT_LOCALISATION);
+		this.initializeAssets("/textures/background/background-gameover.png", "/music/gameover-theme.wav", FONT_LOCALISATION);
 		this.playBackgroundMusic();
 	}
 
@@ -28,7 +28,6 @@ public class GameOver extends State {
 	@Override
 	public void render(Graphics graphics) {
 		try {
-			//BufferedImage img = ImageIO.read(new File(backgroundURI));
 			BufferedImage img = ImageIO.read(backgroundURL);
 			graphics.drawImage(img, 0, -10, null);
 		} catch (IOException e) {

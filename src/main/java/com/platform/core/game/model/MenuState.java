@@ -61,6 +61,7 @@ public class MenuState extends State {
             if (selected > 0) selected--;
         }
         if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
+            if(selected < 1) selected++;
         } else if (key == KeyEvent.VK_ENTER || key == KeyEvent.VK_E) {
             if (selected == 0) {
                 this.playBackgroundMusic();
