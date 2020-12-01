@@ -64,18 +64,8 @@ public class Map {
 	private void loadFile(int levelIndex) {
 		BufferedReader reader = null;
 		try {
-	//		FileReader f = new FileReader("E:\\maps\\level"+levelIndex+".txt");
-			InputStream stream = Game.class.getClass().getResourceAsStream("/maps/level" + levelIndex + ".txt");
-//			//InputStream in = Game.class.getClassLoader().getResourceAsStream("maps/level"+levelIndex+".txt");
-//			System.out.println(stream);
-////			String directory = System.getProperty("user.dir");
-			reader = new BufferedReader(new InputStreamReader(stream));
-//
-//			File userHome = new File(System.getProperty("user.dir"));
-//			File propertiesFile = new File(userHome, "maps/level"+levelIndex+".txt");
-////			reader = new BufferedReader(new FileReader(propertiesFile));
-//			reader = new BufferedReader(f);
-
+			InputStream in = Game.class.getResourceAsStream("/maps/level"+levelIndex+".txt");
+			reader = new BufferedReader(new InputStreamReader(in));
 
 			this.height = Integer.parseInt(reader.readLine());
 			this.width = Integer.parseInt(reader.readLine());
@@ -187,7 +177,7 @@ public class Map {
 				}
 			}
 		} catch(Exception e) {
-			System.err.println("[MAP] Problem z załadowaniem mapy "+levelIndex + ".txt :" + e.getMessage());
+			System.err.println("[MAP] Problem z załadowaniem mapy level"+levelIndex + ".txt :" + e.getMessage());
 			this.loadFile(levelIndex-1);
 		}
 	}
